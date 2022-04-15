@@ -7,7 +7,7 @@ function FiltersInputs() {
   const [filter, setFilter] = useState<otherFilters>({
     diameter: 0,
     orbital_period: 0,
-    climate: ''
+    climate: 'temperate'
   })
   return (
       <form>
