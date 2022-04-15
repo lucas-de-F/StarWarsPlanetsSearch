@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface otherFilters {
+export interface otherFilters {
   id?: number;
-  diameter: string;
+  diameter: number;
   orbital_period: number;
   climate: string;
 }

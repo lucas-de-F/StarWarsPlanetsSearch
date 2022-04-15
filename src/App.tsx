@@ -1,12 +1,12 @@
 import './App.css';
 import { useDispatch } from 'react-redux';
-import { setName } from './Redux/FilterSlice'
+import { otherFilters, setFilters, setName } from './Redux/FilterSlice'
 import { PlanetCards } from './pages/home'
 import { useState } from 'react';
 
 function App() {
   const dispatch = useDispatch()
-  const [filter, setFilter] = useState({
+  const [filter, setFilter] = useState<otherFilters>({
     diameter: 0,
     orbital_period: 0,
     climate: ''
@@ -19,10 +19,12 @@ function App() {
           Diâmetro: 
           <input type="number" onChange={(e: any) => setFilter({ ...filter, diameter: e.target.value})}></input>
         </label>
+
         <label htmlFor="orbital_period">
           periodo orbital: 
           <input type="number" onChange={(e: any) => setFilter({ ...filter, orbital_period: e.target.value })}></input>
         </label>
+
         <label htmlFor="climate">
           clima: 
           <select onChange={(e: any) => setFilter({ ...filter, climate: e.target.value })}>
@@ -33,7 +35,8 @@ function App() {
             <option>murky</option>
           </select>
         </label>
-        <button type='button'>enviar</button>
+
+        <button type='button' onClick={() => dispatch(setFilters(filter))}>enviar</button>
       </form>
       <PlanetCards />
     </div>
