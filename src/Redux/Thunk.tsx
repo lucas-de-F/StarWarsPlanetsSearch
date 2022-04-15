@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux'
 import { planet } from '../pages/types'
+import { RootState } from './store'
 
 export const fetchPlanets = createAsyncThunk(
   'posts/getPosts',
