@@ -1,17 +1,14 @@
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from './Redux/store'
-import { fetchPlanets } from './Redux/Thunk'
-import { setName, setDiameter, setPopulation } from './Redux/FilterSlice'
+import { useDispatch } from 'react-redux';
+import { setName } from './Redux/FilterSlice'
 import { PlanetCards } from './pages/home'
 
 function App() {
-  const dispatch = useDispatch();
-  const planetFilter = useSelector((state: RootState) => state.planetFilter)
-  dispatch(fetchPlanets())
+  const dispatch = useDispatch()
 
   return (
-    <div className="App">
+    <div>
+      <input type="text" onChange={(e) => dispatch(setName(e.target.value))}></input>
       <PlanetCards />
     </div>
   );

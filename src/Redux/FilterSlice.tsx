@@ -1,34 +1,39 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface otherFilters {
+  id?: number;
+  diameter: string;
+  orbital_period: number;
+  climate: string;
+}
 export interface planetInterface {
   name: string;
-  population: number;
-  diameter: number;
+  otherFilters: otherFilters[] | []
 }
 
 // Define the initial state using that type
 const initialState: planetInterface = {
-  name: "",
-  population: 0,
-  diameter: 0,
+  name: "oo",
+  otherFilters: []
 };
 
-const FilterSlice = createSlice({
-  name: "counter",
-  // `createSlice` will infer the state type from the `initialState` argument
+const FilterNameSlice = createSlice({
+  name: "FilterName",
   initialState,
   reducers: {
     setName: (state, action: PayloadAction<string>) => {
       state.name = action.payload;
     },
-    setDiameter: (state, action: PayloadAction<number>) => {
-      state.diameter = action.payload;
+    setFilters: (state: any, action: PayloadAction<otherFilters>) => {
+      const id = state.otherFilters.length
+      state.otherFilters.push({ id, ...action.payload})
     },
-    setPopulation: (state, action: PayloadAction<number>) => {
-      state.population = action.payload;
-    },
+    removeFilters: (state, action: PayloadAction<number>) => {
+      const id = action.payload
+      state.otherFilters = state.otherFilters.filter((filter) => filter.id !== id)
+    }
   },
 });
 
-export const { reducer } = FilterSlice
-export const { setName, setDiameter, setPopulation } = FilterSlice.actions
+export const { reducer } = FilterNameSlice
+export const { setName, setFilters, removeFilters } = FilterNameSlice.actions

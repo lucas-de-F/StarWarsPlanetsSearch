@@ -1,4 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { planet } from '../pages/types'
 
 export const fetchPlanets = createAsyncThunk(
   'posts/getPosts',
@@ -11,25 +12,31 @@ export const fetchPlanets = createAsyncThunk(
 
 interface UsersState {
     entities: []
+    filtered: []
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
 
 const initialState = {
+  filtered: [],
   entities: [],
   loading: 'idle',
 } as UsersState
 
-
 export const fetchPlanetsSlice = createSlice({
     name: 'fetchPlanetsSlice',
     initialState,
-    reducers: {},
-    extraReducers: (builder) => {
+    reducers: {
+      setFilteredPlanets: (state: any, action: PayloadAction<planet[]>) => {
+            state.filtered = action.payload;
+          },
+      },
+      extraReducers: (builder) => {
         builder.addCase(fetchPlanets.fulfilled, (state: any, { payload }: any) => {
-            state.entities.push(...payload);
+            state.filtered = payload
+            state.entities = payload
             state.loading = "idle";
         })
       },
   })
-  
+  export const { setFilteredPlanets } = fetchPlanetsSlice.actions
   export const PlanetsSlice = fetchPlanetsSlice.reducer
