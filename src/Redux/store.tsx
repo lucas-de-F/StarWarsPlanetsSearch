@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer as Filters } from "./FilterSlice";
+import { PlanetsSlice } from './Thunk'
 
 export const store = configureStore({
   reducer: {
-    // planets: reducer,
+    PlanetsSlice,
     planetFilter: Filters,
   },
 });

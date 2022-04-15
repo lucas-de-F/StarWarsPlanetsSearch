@@ -1,12 +1,14 @@
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { AnyAction, EnhancedStore, Reducer } from '@reduxjs/toolkit';
 import { RootState } from './Redux/store'
+import { fetchPlanets } from './Redux/Thunk'
 import { setName, setDiameter, setPopulation } from './Redux/FilterSlice'
 
 function App() {
   const dispatch = useDispatch();
   const planetFilter = useSelector((state: RootState) => state.planetFilter)
+  dispatch(fetchPlanets())
+
   return (
     <div className="App">
       <header className="App-header" style={{ display: 'flex', flexDirection: 'column'}}>
@@ -27,11 +29,11 @@ function App() {
         </div>
 
         <div>
-        diâmetro { planetFilter.diameter }
+        <input type="number" id="diâmetro" onChange={(e) => dispatch(setPopulation(Number(e.target.value)))} />
         </div>
 
         <div>
-        <input type="number" id="diâmetro" onChange={(e) => dispatch(setPopulation(Number(e.target.value)))} />
+        diâmetro { planetFilter.diameter }
         </div>
 
       </header>
