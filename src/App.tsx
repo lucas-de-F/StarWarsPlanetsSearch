@@ -1,23 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
+import { AnyAction, EnhancedStore, Reducer } from '@reduxjs/toolkit';
+import { RootState } from './Redux/store'
 
 function App() {
+  const planetFilter = useSelector((state: RootState) => state.planetFilter)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header" style={{ display: 'flex', flexDirection: 'column'}}>
+        <div>
+        nome { planetFilter.name }
+        </div>
+        <div>
+        população { planetFilter.population }
+        </div>
+        <div>
+        diâmetro { planetFilter.diameter }
+        </div>
       </header>
     </div>
   );
