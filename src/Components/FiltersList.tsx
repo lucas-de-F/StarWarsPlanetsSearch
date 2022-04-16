@@ -12,7 +12,7 @@ function FiltersInputsList() {
 
   useEffect(() => {
     dispatch(setFilteredPlanets(entities))
-    const applyfilters = otherFilters.map(({ as, filter_option, value }) => {
+    otherFilters.forEach(({ as, filter_option, value }) => {
       if(as === 'less') {
         const filter = entities.filter((planet) => Number(planet[filter_option]) < value ? planet : null)
         return dispatch(setFilteredPlanets(filter))

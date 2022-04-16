@@ -31,7 +31,7 @@ function FiltersInputs() {
             <option value='less'>less_than</option>
           </select>
         </label>
-        <input type="number" onChange={(e: any) => setFilter({ ...filter, value: e.target.value })}></input>
+        <input type="number" onChange={(e: any) => setFilter({ ...filter, value: Number(e.target.value) })}></input>
         <button type='button' onClick={() => dispatch(setFilters(filter))}>enviar</button>
       </form>
   );
