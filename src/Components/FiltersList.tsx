@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { otherFilters, removeFilters } from '../Redux/FilterSlice'
-import { useState } from 'react';
+import { removeFilters } from '../Redux/FilterSlice'
 import { RootState } from '../Redux/store';
 
 function FiltersInputsList() {

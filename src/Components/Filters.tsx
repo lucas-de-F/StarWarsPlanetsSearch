@@ -1,37 +1,37 @@
 import { useDispatch } from 'react-redux';
-import { otherFilters, setFilters } from '../Redux/FilterSlice'
+import { otherFilters } from '../Redux/types'
+import { setFilters } from '../Redux/FilterSlice'
 import { useState } from 'react';
 
 function FiltersInputs() {
   const dispatch = useDispatch()
   const [filter, setFilter] = useState<otherFilters>({
-    diameter: 0,
-    orbital_period: 0,
-    climate: 'temperate'
+    filter_option: 'population',
+    as: 'equal',
+    value: 0,
   })
   return (
       <form>
-        <label htmlFor="diameter">
-          Diâmetro: 
-          <input type="number" onChange={(e: any) => setFilter({ ...filter, diameter: e.target.value})}></input>
-        </label>
-
-        <label htmlFor="orbital_period">
-          periodo orbital: 
-          <input type="number" onChange={(e: any) => setFilter({ ...filter, orbital_period: e.target.value })}></input>
-        </label>
-
+        
         <label htmlFor="climate">
-          clima: 
-          <select onChange={(e: any) => setFilter({ ...filter, climate: e.target.value })}>
-            <option>temperate</option>
-            <option>arid</option>
-            <option>frozen</option>
-            <option>tropical</option>
-            <option>murky</option>
+          Filter by: 
+          <select onChange={(e: any) => setFilter({ ...filter, filter_option: e.target.value })}>
+            <option>population</option>
+            <option>diameter</option>
+            <option>orbital_period</option>
+            <option>rotation_period</option>
+            <option>surface_water</option>
           </select>
         </label>
-
+        
+        <label htmlFor="climate">
+          <select onChange={(e: any) => setFilter({ ...filter, as: e.target.value })}>
+            <option value='equal'>equal</option>
+            <option value='greater'>greater_than</option>
+            <option value='less'>less_than</option>
+          </select>
+        </label>
+        <input type="number" onChange={(e: any) => setFilter({ ...filter, value: e.target.value })}></input>
         <button type='button' onClick={() => dispatch(setFilters(filter))}>enviar</button>
       </form>
   );

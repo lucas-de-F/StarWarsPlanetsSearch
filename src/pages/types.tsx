@@ -1,5 +1,6 @@
 export interface planet {
     name: string;
-    diameter: string;
-    population: string;
+    diameter: number;
+    population: number;
+    climate: string;
 }

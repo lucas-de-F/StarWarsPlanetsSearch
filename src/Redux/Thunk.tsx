@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { useSelector } from 'react-redux'
 import { planet } from '../pages/types'
-import { RootState } from './store'
+import { UsersState } from './types';
 
 export const fetchPlanets = createAsyncThunk(
   'posts/getPosts',
@@ -11,12 +10,6 @@ export const fetchPlanets = createAsyncThunk(
   )
   return res.results
 })
-
-interface UsersState {
-    entities: []
-    filtered: []
-    loading: 'idle' | 'pending' | 'succeeded' | 'failed'
-}
 
 const initialState = {
   filtered: [],

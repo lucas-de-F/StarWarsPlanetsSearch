@@ -1,21 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { planet } from "../pages/types";
+import { RootState } from "./store";
+import { planetInterface, otherFilters } from "./types";
 
-export interface otherFilters {
-  id?: number;
-  diameter: number;
-  orbital_period: number;
-  climate: string;
-}
-export interface planetInterface {
-  name: string;
-  otherFilters: otherFilters[] | []
-}
-
-// Define the initial state using that type
 const initialState: planetInterface = {
-  name: "oo",
+  name: "",
   otherFilters: []
 };
+// export interface otherFilters {
+//   id?: number;
+//   diameter: number;
+//   orbital_period: number;
+//   climate: string;
+// }
 
 const FilterNameSlice = createSlice({
   name: "FilterName",
@@ -31,6 +29,13 @@ const FilterNameSlice = createSlice({
     removeFilters: (state, action: PayloadAction<number>) => {
       const id = action.payload
       state.otherFilters = state.otherFilters.filter((filter) => filter.id !== id)
+    },
+    applyAllSavedFilters: (state: any, action: PayloadAction<planet[] | any>) => {
+      const filterWithOtherFilters = state.otherFilters.forEach((filter: otherFilters) => {
+        const filterByClimate = action.payload.filter((planet: planet) => planet.climate === filter.climate)
+        const filterByOrbitalPeriod = filterByClimate.filter((planet: planet) => planet.climate === filter.climate) 
+      })
+      
     }
   },
 });
