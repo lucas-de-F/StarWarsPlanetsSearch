@@ -11,7 +11,7 @@ function FiltersInputsList() {
     { otherFilters ? otherFilters.map((filter) => (
     <div>
       <p>
-        clima: {filter.climate} diametro: {filter.diameter} priodoOrbital: {filter.orbital_period}
+        Filtered By: {filter.filter_option} {filter.as} {filter.value}
         <button onClick={() => dispatch(removeFilters(filter.id as number)) }>X</button>
       </p>
     </div>
