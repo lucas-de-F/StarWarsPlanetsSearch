@@ -8,12 +8,6 @@ const initialState: planetInterface = {
   name: "",
   otherFilters: []
 };
-// export interface otherFilters {
-//   id?: number;
-//   diameter: number;
-//   orbital_period: number;
-//   climate: string;
-// }
 
 const FilterNameSlice = createSlice({
   name: "FilterName",
@@ -30,12 +24,18 @@ const FilterNameSlice = createSlice({
       const id = action.payload
       state.otherFilters = state.otherFilters.filter((filter) => filter.id !== id)
     },
-    applyAllSavedFilters: (state: any, action: PayloadAction<planet[] | any>) => {
-      const filterWithOtherFilters = state.otherFilters.forEach((filter: otherFilters) => {
-        const filterByClimate = action.payload.filter((planet: planet) => planet.climate === filter.climate)
-        const filterByOrbitalPeriod = filterByClimate.filter((planet: planet) => planet.climate === filter.climate) 
+    applyAllSavedFilters: (state: planetInterface, action: PayloadAction<planet[] | any>) => {
+      return action.payload.filter((planet: planet) => {
+        return state.otherFilters.map(({ as, filter_option, value }) => {
+          if(as === 'less') {
+            return Number(planet[filter_option]) < value
+          }
+          if(as === 'greater') {
+            return planet[filter_option] > value
+          }
+          return planet[filter_option] === value
+        })
       })
-      
     }
   },
 });
