@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { planet } from '../pages/types'
+import { planet } from "../Components/types";
 import { UsersState } from './types';
 
 export const fetchPlanets = createAsyncThunk(
