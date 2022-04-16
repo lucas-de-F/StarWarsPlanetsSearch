@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Select = (params: string[]) => (
-    <select>
-        {params.map((param) => (
+export const Select = ({ params, changeState }: any) => (
+    <select onChange={changeState}>
+        {params.map((param: string) => (
             <option>{param}</option>
         ))}
     </select>
