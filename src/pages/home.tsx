@@ -7,6 +7,7 @@ import { planet } from './types';
 export const PlanetCards = () => {
     const dispatch = useDispatch();
     const filters = useSelector((state: RootState) => state.planetFilter)
+    const { otherFilters } = useSelector((state: RootState) => state.planetFilter)
 
     const AllPlanets = useSelector((state: RootState) => state.PlanetsSlice.entities)
     const planetsFiltered = useSelector((state: RootState) => state.PlanetsSlice.filtered)
