@@ -27,8 +27,8 @@ function FiltersInputs() {
         <label htmlFor="climate">
           <select onChange={(e: any) => setFilter({ ...filter, as: e.target.value })}>
             <option value='equal'>equal</option>
-            <option value='greater'>greater_than</option>
-            <option value='less'>less_than</option>
+            <option value='greater'>greater</option>
+            <option value='less'>less</option>
           </select>
         </label>
         <input type="number" onChange={(e: any) => setFilter({ ...filter, value: Number(e.target.value) })}></input>
