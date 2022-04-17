@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: star jedi;
+  src: url('./fonts/Starjedi.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: star jedi hollow;
+  src: url('./fonts/Starjhol.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.parent {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(50, 1fr);
+  grid-column-gap: 9px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: 100%;
+}
+  .color1 { background-color: blue }
+  .color2 { background-color: red }
+  .color3 { background-color: green }
+  .color4 { background-color: grey }
+  .color5 { background-color: purple }
+  .color6 { background-color: aqua }
+  .color7 { background-color: tan }
+
+  .hero { grid-area: 1 / 1 / 12 / 17; }
+  .pading0 {
+    padding: 0;
+    margin: 0;
+    height: 20px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .title {
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 2 / 11 / 11; 
   }
-  to {
-    transform: rotate(360deg);
+  .geek {
+    align-self: flex-start;
+    font: 64px star jedi;
+    margin: 0;
   }
-}
+  .websiteLogo {
+    margin-left: 50px;
+    align-self: flex-start;
+    font: 115px star jedi hollow;
+  }
+
+  .nav { grid-area: 12 / 1 / 14 / 17; }
+  .navItems { grid-area: 12 / 12 / 14 / 16; }
+  .item1 { grid-area: 12 / 12 / 14 / 13; }
+  .item2 { grid-area: 12 / 13 / 14 / 14; }
+  .item3 { grid-area: 12 / 14 / 14 / 15; }
+  .item4 { grid-area: 12 / 15 / 14 / 16; }
+
+  .main { grid-area: 16 / 2 / 49 / 7; }
+  .mainTitle { grid-area: 17 / 2 / 22 / 6; }
+  .mainText { grid-area: 24 / 5 / 39 / 7; }
+  .mainSupportText { grid-area: 42 / 5 / 44 / 7; }
+  .mainFooter { grid-area: 47 / 5 / 48 / 7; }
+  
+  .article { grid-area: 16 / 8 / 49 / 16; }
+  .section1 { grid-area: 16 / 8 / 42 / 12; }
+  .section1Nav { grid-area: 16 / 8 / 19 / 12; }
+  .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
+  .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
+
+  .section2 { grid-area: 43 / 8 / 49 / 16; }
+  .sectionFooter { grid-area: 16 / 12 / 42 / 16; }
+  .footer { grid-area: 50 / 8 / 51 / 16; }
+  
