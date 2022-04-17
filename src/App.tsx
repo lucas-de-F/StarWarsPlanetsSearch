@@ -33,17 +33,20 @@ function App() {
       </div>
 
 
-      <div className="mainText ">a </div>
-      <div className="mainSupportText ">a </div>
-      <div className="mainFooter ">a </div>
-      <div className="article color4">a </div>
+      <div className="mainText color2 pading0">ABOUT
+        <p className='mainTextAbout'>EVERY</p>
+        <p className='mainTextEvery'>THING</p>
+      </div>
+      <div className="mainSupportText">a</div>
+      <div className="mainFooter darkColor">a </div>
+      <div className="article">a </div>
       <div className="section1Nav ">a </div>
       <div className="section1Item1 ">a </div>
       <div className="section1Item2 ">a </div>
-      <div className="section2 color6">a </div>
-      <div className="sectionFooter color7">a </div>
-      <div className="footer color7">a </div>
-      <div className="section1 color5">  </div>
+      <div className="section2 darkColor">a </div>
+      <div className="sectionFooter darkColor">a </div>
+      <div className="footer darkColor">a </div>
+      <div className="section1 darkColor">  </div>
     </body>
   );
 }
