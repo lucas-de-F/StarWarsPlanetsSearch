@@ -1,72 +1,117 @@
-@font-face {
-  font-family: star jedi;
-  src: url('./fonts/Starjedi.ttf');
-}
-
-@font-face {
-  font-family: star jedi hollow;
-  src: url('./fonts/Starjhol.ttf');
-}
-
-.parent {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(50, 1fr);
-  grid-column-gap: 9px;
-  grid-row-gap: 0px;
-  width: 100%;
-  height: 100%;
-}
-  .color1 { background-color: blue }
-  .color2 { background-color: red }
-  .color3 { background-color: green }
-  .color4 { background-color: grey }
-  .color5 { background-color: purple }
-  .color6 { background-color: aqua }
-  .color7 { background-color: tan }
-
-  .hero { grid-area: 1 / 1 / 12 / 17; }
-  .pading0 {
-    padding: 0;
-    margin: 0;
-    height: 20px;
+  @font-face {
+    font-family: star jedi;
+    src: url('./fonts/Starjedi.ttf');
   }
-  .title {
-    display: flex;
-    flex-direction: column;
-    grid-area: 1 / 2 / 11 / 11; 
+  @font-face {
+    font-family: Ailerons;
+    src: url('./fonts/Ailerons-Regular.otf');
   }
-  .geek {
-    align-self: flex-start;
-    font: 64px star jedi;
-    margin: 0;
+  @font-face {
+    font-family: star jedi hollow;
+    src: url('./fonts/Starjhol.ttf');
   }
-  .websiteLogo {
-    margin-left: 50px;
-    align-self: flex-start;
-    font: 115px star jedi hollow;
+  @font-face {
+    font-family: action force;
+    src: url('./fonts/Action_Force.ttf');
   }
 
-  .nav { grid-area: 12 / 1 / 14 / 17; }
-  .navItems { grid-area: 12 / 12 / 14 / 16; }
-  .item1 { grid-area: 12 / 12 / 14 / 13; }
-  .item2 { grid-area: 12 / 13 / 14 / 14; }
-  .item3 { grid-area: 12 / 14 / 14 / 15; }
-  .item4 { grid-area: 12 / 15 / 14 / 16; }
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    grid-column-gap: 9px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: 100%;
+  }
+    .darkColor { background-color: #000814;}
+    .color2 { color: #FFD60A }
+    .navColor { background-color: #003566 }
+    .bodyColor { background-color: #001D3D; z-index: -3; }
+    .color3 { background-color: green }
+    .color4 { background-color: grey }
+    .color5 { background-color: purple }
+    .color6 { background-color: aqua }
+    .color7 { background-color: tan }
 
-  .main { grid-area: 16 / 2 / 49 / 7; }
-  .mainTitle { grid-area: 17 / 2 / 22 / 6; }
-  .mainText { grid-area: 24 / 5 / 39 / 7; }
-  .mainSupportText { grid-area: 42 / 5 / 44 / 7; }
-  .mainFooter { grid-area: 47 / 5 / 48 / 7; }
-  
-  .article { grid-area: 16 / 8 / 49 / 16; }
-  .section1 { grid-area: 16 / 8 / 42 / 12; }
-  .section1Nav { grid-area: 16 / 8 / 19 / 12; }
-  .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
-  .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
+    .hero { grid-area: 1 / 1 / 12 / 17; }
+    .pading0 {
+      padding: 0;
+      margin: 0;
+      height: 20px;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      grid-area: 1 / 2 / 11 / 11;
+      z-index: 2
+    }
 
-  .section2 { grid-area: 43 / 8 / 49 / 16; }
-  .sectionFooter { grid-area: 16 / 12 / 42 / 16; }
-  .footer { grid-area: 50 / 8 / 51 / 16; }
-  
+    .geek {
+      align-self: flex-start;
+      font: 64px star jedi;
+      margin: 0;
+      z-index: 2
+
+    }
+    .websiteLogo {
+      margin-left: 100px;
+      align-self: flex-start;
+      font: 115px star jedi hollow;
+      z-index: 2  
+    }
+    .navItemsFont {
+      color: white;
+      font: 32px Ailerons;
+      margin: 0;
+      z-index: 2
+    }
+    .braking {
+      font: 70px action force;
+      margin: 0;
+    }
+
+    .newsSVG {
+      position: absolute;
+      top: 410px;
+      margin-left: 235px;
+      width: 8vw;
+      /* height: 10vw; */
+    }
+    @media (max-width: 1514px) {
+      .braking {
+        font: 350% action force;
+        margin: 0;
+        transition: left 0.5s
+      }
+      .newsSVG {
+        position: absolute;
+        top: 380px;
+        margin-left: 190px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .nav { grid-area: 10 / 1 / 12 / 17; z-index: 2 }
+    .navItems { display: flex; flex-direction: row;justify-content: space-between; grid-area: 10 / 12 / 12 / 16; }
+    .item1 { grid-area: 10 / 12 / 12 / 13; }
+    .item2 { grid-area: 10 / 13 / 12 / 14; }
+    .item3 { grid-area: 10 / 14 / 12 / 15; }
+    .item4 { grid-area: 10 / 15 / 12 / 16; }
+
+    .main { grid-area: 16 / 2 / 49 / 7; }
+    .mainTitle { grid-area: 17 / 2 / 22 / 6; margin: 40px; }
+    .mainText { grid-area: 24 / 5 / 39 / 7; }
+    .mainSupportText { grid-area: 42 / 5 / 44 / 7; }
+    .mainFooter { grid-area: 47 / 5 / 48 / 7; }
+    
+    .article { grid-area: 16 / 8 / 49 / 16; }
+    .section1 { grid-area: 16 / 8 / 42 / 12; }
+    .section1Nav { grid-area: 16 / 8 / 19 / 12; }
+    .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
+    .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
+
+    .section2 { grid-area: 43 / 8 / 49 / 16; }
+    .sectionFooter { grid-area: 16 / 12 / 42 / 16; }
+    .footer { grid-area: 50 / 8 / 51 / 16; }
+    .div1 { grid-area: 1 / 1 / 12 / 17; z-index: 1;}
