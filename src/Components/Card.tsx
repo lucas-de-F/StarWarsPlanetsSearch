@@ -1,4 +1,4 @@
-import '../App.css';
+import '../card.css';
 
 export function Card() {
   return (
@@ -17,8 +17,8 @@ export function Card() {
 
 
       <div className="mainText color2 pading0">ABOUT
-        <p className='mainTextAbout'>EVERY</p>
-        <p className='mainTextEvery'>THING</p>
+        <p className='mainTextEvery pading0'>EVERY</p>
+        <p className='mainTextthing pading0' >THING</p>
       </div>
     </>
   )
