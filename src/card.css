@@ -11,6 +11,10 @@
     src: url('./fonts/Gotham-Medium.otf');
   }
   @font-face {
+    font-family: gotham book;
+    src: url('./fonts/Gotham-Book.otf');
+  }
+  @font-face {
     font-family: fenwick;
     src: url('./fonts/fenwick_ol_free.ttf');
   }
@@ -39,6 +43,7 @@
     .mainTextEvery {
       font: 4.5vw fenwick;
       line-height: 50px;
+      margin-top: 0.2vw;
       letter-spacing: 10px;
       margin-right: 10px;
       line-height: 0.7;
@@ -47,7 +52,14 @@
       font: 4.5vw fenwick;
       line-height: 50px;
       letter-spacing: 16px;
-      margin-top: 2.3vw;
+      margin-top: 2.4vw;
+      line-height: 0.7;
+    }
+    .youwanted {
+      font: 1.44vw gotham book;
+      line-height: 50px;
+      letter-spacing: 2px;
+      margin-top: 2.5vw;
       line-height: 0.7;
     }
 
@@ -59,9 +71,10 @@
     }
 
     .newsSVG {
-      position: absolute;
-      top: 340px;
+      /* position: absolute; */
+      z-index: 2;
       margin-left: 253px;
+      margin-top: 15px;
       width: 150px;
     }
     @media (max-width: 1514px) {
@@ -79,12 +92,22 @@
       } */
     }
 
-    .main { grid-area: 16 / 2 / 49 / 7; }
-    .mainTitle { grid-area: 17 / 2 / 22 / 6; margin: 0px; }
+    .main { grid-area: 15 / 2 / 49 / 7; }
+    .mainTitle { grid-area: 16 / 2 / 22 / 6; margin: 0px; }
     .mainText {
-      grid-area: 27 / 4 / 39 / 7;
+      grid-area: 25 / 4 / 39 / 7;
       font: 2vw gotham medium; 
       line-height: 0.7;
     }
-    .mainSupportText { grid-area: 42 / 5 / 44 / 7 }
-    .mainFooter { grid-area: 47 / 5 / 48 / 7; }
+    .mainSupportText {
+      grid-area: 40 / 4 / 44 / 7;
+      font: 1.49vw gotham book;
+      line-height: 0.7;
+      letter-spacing: 0.5vw;
+      color: white
+    }
+    .mainFooter {
+      grid-area: 47 / 4 / 48 / 7;
+      font: 0.5vw gotham book;
+      letter-spacing: 0.8vw;
+      color: white}

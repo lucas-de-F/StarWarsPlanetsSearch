@@ -5,7 +5,7 @@ export function Card() {
     <>
       <div className="main darkColor"></div>
       <div className="mainTitle pading0">
-        <p className='braking'>BREAKING</p>
+        <p className='braking pading0'>BREAKING</p>
         <svg className="newsSVG" width="177" height="72" viewBox="0 0 177 72" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28 0H37L42 11.7818H177L158 65H28L9 72H0L28 0Z" fill="#DE2D2D" />
           <path d="M43.76 59L57.648 20.6H46.192L41.648 34.296L40.432 20.664L29.04 20.6L14.96 59C21.9573 59 25.456 59 25.456 59L31.216 45.176L31.344 59H43.76Z" fill="white" />
@@ -19,7 +19,10 @@ export function Card() {
       <div className="mainText color2 pading0">ABOUT
         <p className='mainTextEvery pading0'>EVERY</p>
         <p className='mainTextthing pading0' >THING</p>
+        <p className='youwanted pading0' >THAT YOU WANTED</p>
       </div>
+      <div className='mainSupportText pading0'>IN ONE PLACE</div>
+      <div className='mainFooter pading0'>EDITED BY: LUCAS</div>
     </>
   )
 }
