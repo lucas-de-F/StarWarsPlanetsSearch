@@ -1,14 +1,6 @@
   @font-face {
-    font-family: star jedi;
-    src: url('./fonts/Starjedi.ttf');
-  }
-  @font-face {
     font-family: Ailerons;
     src: url('./fonts/Ailerons-Regular.otf');
-  }
-  @font-face {
-    font-family: star jedi hollow;
-    src: url('./fonts/Starjhol.ttf');
   }
   @font-face {
     font-family: action force;
@@ -36,10 +28,6 @@
     .color2 { color: #FFD60A }
     .navColor { background-color: #003566 }
     .bodyColor { background-color: #001D3D; z-index: -3; }
-    .color3 { background-color: green }
-    .color5 { background-color: purple }
-    .color6 { background-color: aqua }
-    .color7 { background-color: tan }
 
     .hero { grid-area: 1 / 1 / 12 / 17; }
     .pading0 {
@@ -47,19 +35,7 @@
       margin: 0;
       height: 20px;
     }
-    .title {
-      display: flex;
-      flex-direction: column;
-      grid-area: 1 / 2 / 11 / 11;
-      z-index: 2
-    }
 
-    .geek {
-      align-self: flex-start;
-      font: 64px star jedi;
-      margin: 0;
-      z-index: 2
-    }
     .mainTextAbout {
       font: 5vw fenwick;
       line-height: 50px;
@@ -76,18 +52,7 @@
       padding: 0;
       margin-top: 1vw;
     }
-    .websiteLogo {
-      margin-left: 100px;
-      align-self: flex-start;
-      font: 115px star jedi hollow;
-      z-index: 2  
-    }
-    .navItemsFont {
-      color: white;
-      font: 32px Ailerons;
-      margin: 0;
-      z-index: 2
-    }
+
     .braking {
       color: white;
       font: 70px action force;
@@ -99,7 +64,6 @@
       top: 410px;
       margin-left: 235px;
       width: 8vw;
-      /* height: 10vw; */
     }
     @media (max-width: 1514px) {
       .braking {
@@ -115,12 +79,6 @@
         height: 100px;
       }
     }
-    .nav { grid-area: 10 / 1 / 12 / 17; z-index: 2 }
-    .navItems { display: flex; flex-direction: row;justify-content: space-between; grid-area: 10 / 12 / 12 / 16; }
-    .item1 { grid-area: 10 / 12 / 12 / 13; }
-    .item2 { grid-area: 10 / 13 / 12 / 14; }
-    .item3 { grid-area: 10 / 14 / 12 / 15; }
-    .item4 { grid-area: 10 / 15 / 12 / 16; }
 
     .main { grid-area: 16 / 2 / 49 / 7; }
     .mainTitle { grid-area: 17 / 2 / 22 / 6; margin: 40px; }
@@ -137,4 +95,3 @@
     .section2 { grid-area: 43 / 8 / 49 / 16; }
     .sectionFooter { grid-area: 16 / 12 / 42 / 16; }
     .footer { grid-area: 50 / 8 / 51 / 16; }
-    .div1 { grid-area: 1 / 1 / 12 / 17; z-index: 1;}

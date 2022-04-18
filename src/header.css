@@ -1,0 +1,53 @@
+  @font-face {
+    font-family: star jedi;
+    src: url('./fonts/Starjedi.ttf');
+  }
+
+  @font-face {
+    font-family: star jedi hollow;
+    src: url('./fonts/Starjhol.ttf');
+  }
+
+    .darkColor { background-color: #000814;}
+    .color2 { color: #FFD60A }
+    .navColor { background-color: #003566 }
+    .bodyColor { background-color: #001D3D; z-index: -3; }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      grid-area: 1 / 2 / 11 / 11;
+      z-index: 2
+    }
+
+    .geek {
+      align-self: flex-start;
+      font: 64px star jedi;
+      margin: 0;
+      z-index: 2
+    }
+
+    .websiteLogo {
+      margin-left: 100px;
+      align-self: flex-start;
+      font: 115px star jedi hollow;
+      z-index: 2  
+    }
+    .navItemsFont {
+      color: white;
+      font: 32px Ailerons;
+      margin: 0;
+      z-index: 2
+    }
+
+    @media (max-width: 1514px) {
+
+    }
+    .nav { grid-area: 10 / 1 / 12 / 17; z-index: 2 }
+    .navItems { display: flex; flex-direction: row;justify-content: space-between; grid-area: 10 / 12 / 12 / 16; }
+    .item1 { grid-area: 10 / 12 / 12 / 13; }
+    .item2 { grid-area: 10 / 13 / 12 / 14; }
+    .item3 { grid-area: 10 / 14 / 12 / 15; }
+    .item4 { grid-area: 10 / 15 / 12 / 16; }
+
+    .div1 { grid-area: 1 / 1 / 12 / 17; z-index: 1;}

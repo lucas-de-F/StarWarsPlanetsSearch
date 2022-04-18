@@ -4,7 +4,7 @@ import { RootState } from '../Redux/store';
 import { fetchPlanets, setFilteredPlanets } from '../Redux/Thunk';
 import { planet } from './types';
 import FiltersInputs from '../Components/Filters';
-import { Planets } from '../Components/card';
+import { Planets } from './cardplanet';
 import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
 
