@@ -16,9 +16,10 @@ export function Card() {
       </div>
 
 
-      <div className="mainText color2 pading0">ABOUT
-        <p className='mainTextEvery pading0'>EVERY</p>
-        <p className='mainTextthing pading0' >THING</p>
+      <div className="mainText color2 pading0">
+        ABOUT
+        <p className='mainTextEvery pading0 '>EVERY</p>
+        <p className='mainTextthing pading0'  >THING</p>
         <p className='youwanted pading0' >THAT YOU WANTED</p>
       </div>
       <div className='mainSupportText pading0'>IN ONE PLACE</div>

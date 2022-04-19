@@ -65,17 +65,16 @@
 
     .braking {
       color: white;
-      font: 4vw action force;
+      font: 59px action force;
       margin: 0px;
       margin-left: 15px;
       transform-origin: top right;
-
     }
 
     .newsSVG {
       z-index: 2;
-      margin-left: 14vw;
-      margin-top: 1.2vw;
+      margin-left: 200px;
+      margin-top: 15px;
       width: 150px;
       transform-origin: top left;
     }
@@ -98,10 +97,11 @@
       grid-area: 47 / 4 / 48 / 7;
       font: 0.5vw gotham book;
       letter-spacing: 0.8vw;
-      color: white}
+      color: white
+    }
 
-@media (max-width: 1279px) {
-  .main { grid-area: 15 / 2 / 49 / 9; }
+@media (max-width: 1280px) {
+  .main { grid-area: 15 / 2 / 49 / 10; }
   .braking {
     color: white;
     font: 59px action force;
@@ -112,39 +112,52 @@
 
   .newsSVG {
     z-index: 2;
-    margin-left: 200px;
+    margin-left: 180px;
     margin-top: 15px;
-    width: 12vw;
+    width: 15vw;
     transform-origin: top left;
   }
 
   .mainText {
-    grid-area: 25 / 5 / 49 / 8;
-    font: 3vw gotham medium; 
+    grid-area: 25 / 5 / 49 / 9;
+    font: 30px gotham medium; 
     line-height: 0.7;
+
   }
   .mainTextEvery {
-    font: 6vw fenwick;
+    font: 70px fenwick;
     line-height: 50px;
     margin-top: 0.2vw;
     letter-spacing: 10px;
-    margin-right: 10px;
     line-height: 0.7;
   }
   .mainTextthing {
-    font: 6vw fenwick;
+    font: 70px fenwick;
     line-height: 50px;
-    letter-spacing: 1.5vw;
-    margin-top: 2.8vw;
+    letter-spacing: 13px;
+    margin-top: 35px;
     line-height: 0.7;
   }
   .youwanted {
-    font: 1.44vw gotham book;
+    font: 20px gotham book;
     line-height: 50px;
-    letter-spacing: 0.5vw;
-    margin-top: 3.2vw;
+    letter-spacing: 3px;
+    margin-top: 35px;
     line-height: 0.7;
-    width: 350px;
+    align-self: center;
+    width: 300px;
   }
-
+  .mainSupportText {
+    grid-area: 40 / 5 / 48 / 16;
+    font: 20px gotham book;
+    line-height: 0.7;
+    letter-spacing: 9px;
+    color: white;
+  }
+  .mainFooter {
+    grid-area: 47 / 5 / 48 / 16;
+    font: 10px gotham book;
+    letter-spacing: 10px;
+    color: white
+  }
 }
