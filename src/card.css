@@ -99,3 +99,52 @@
       font: 0.5vw gotham book;
       letter-spacing: 0.8vw;
       color: white}
+
+@media (max-width: 1279px) {
+  .main { grid-area: 15 / 2 / 49 / 9; }
+  .braking {
+    color: white;
+    font: 59px action force;
+    margin: 0px;
+    margin-left: 15px;
+    transform-origin: top right;
+  }
+
+  .newsSVG {
+    z-index: 2;
+    margin-left: 200px;
+    margin-top: 15px;
+    width: 12vw;
+    transform-origin: top left;
+  }
+
+  .mainText {
+    grid-area: 25 / 5 / 49 / 8;
+    font: 3vw gotham medium; 
+    line-height: 0.7;
+  }
+  .mainTextEvery {
+    font: 6vw fenwick;
+    line-height: 50px;
+    margin-top: 0.2vw;
+    letter-spacing: 10px;
+    margin-right: 10px;
+    line-height: 0.7;
+  }
+  .mainTextthing {
+    font: 6vw fenwick;
+    line-height: 50px;
+    letter-spacing: 1.5vw;
+    margin-top: 2.8vw;
+    line-height: 0.7;
+  }
+  .youwanted {
+    font: 1.44vw gotham book;
+    line-height: 50px;
+    letter-spacing: 0.5vw;
+    margin-top: 3.2vw;
+    line-height: 0.7;
+    width: 350px;
+  }
+
+}

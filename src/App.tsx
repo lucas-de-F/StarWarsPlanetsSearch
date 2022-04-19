@@ -10,12 +10,12 @@ function App() {
       <Card />
       <Sections />
       
-      <div className="article"> asdasdasdasdasdasda </div>
+      {/* <div className="article"> asdasdasdasdasdasda </div>
       <div className="section1Nav ">a </div>
       <div className="section1Item1 ">a </div>
       <div className="section1Item2 "></div>
       <div className="footer darkColor">a </div>
-      <div className="section1 darkColor">  </div>
+      <div className="section1 darkColor">  </div> */}
     </body>
   );
 }
