@@ -40,9 +40,6 @@
       z-index: 2
     }
 
-    @media (max-width: 1514px) {
-
-    }
     .nav { grid-area: 10 / 1 / 12 / 17; z-index: 2 }
     .navItems { display: flex; flex-direction: row;justify-content: space-between; grid-area: 10 / 12 / 12 / 16; }
     .item1 { grid-area: 10 / 12 / 12 / 13; }
@@ -51,3 +48,36 @@
     .item4 { grid-area: 10 / 15 / 12 / 16; }
 
     .div1 { grid-area: 1 / 1 / 12 / 17; z-index: 1;}
+
+    @media (max-width: 1279px) {
+      .title {
+        display: flex;
+        flex-direction: column;
+        grid-area: 3 / 1 / 12 / 18;
+        z-index: 1;
+        align-content: center;
+      }
+      .websiteLogo {
+        margin-left: 70px;
+        align-self: flex-start;
+        font: 80px star jedi hollow;
+        z-index: 1;
+        align-self: center;
+        margin-right: 60px;
+      }
+      .geek {
+        align-self: flex-start;
+        font: 49px star jedi;
+        z-index: 2;
+        align-self: center;
+        margin-right: 400px;
+      }
+      .navItems {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between; 
+        grid-area: 10 / 2 / 12 / 16;
+      }
+      .nav { grid-area: 10 / 1 / 12 / 18; z-index: 2; }
+      
+    }

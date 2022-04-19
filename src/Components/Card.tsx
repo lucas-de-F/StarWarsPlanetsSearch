@@ -6,7 +6,7 @@ export function Card() {
       <div className="main darkColor"></div>
       <div className="mainTitle pading0">
         <p className='braking pading0'>BREAKING</p>
-        <svg className="newsSVG" width="177" height="72" viewBox="0 0 177 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="newsSVG" width="8vw" height="72" viewBox="0 0 177 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28 0H37L42 11.7818H177L158 65H28L9 72H0L28 0Z" fill="#DE2D2D" />
           <path d="M43.76 59L57.648 20.6H46.192L41.648 34.296L40.432 20.664L29.04 20.6L14.96 59C21.9573 59 25.456 59 25.456 59L31.216 45.176L31.344 59H43.76Z" fill="white" />
           <path d="M70.8405 31.48L69.7525 34.296H84.9845L81.2725 45.112L65.5285 45.176L64.1845 48.632L79.9925 48.568L76.1525 59H54.7125C54.9258 59 53.9658 56.568 51.8325 51.704L61.0485 26.808L68.7925 20.6H89.8485L86.0725 31.416L70.8405 31.48Z" fill="white" />

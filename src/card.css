@@ -65,30 +65,19 @@
 
     .braking {
       color: white;
-      font: 70px action force;
+      font: 4vw action force;
       margin: 0px;
-      margin-left: 20px;
+      margin-left: 15px;
+      transform-origin: top right;
+
     }
 
     .newsSVG {
       z-index: 2;
-      margin-left: 253px;
-      margin-top: 15px;
+      margin-left: 14vw;
+      margin-top: 1.2vw;
       width: 150px;
-    }
-    @media (max-width: 1514px) {
-      /* .braking {
-        font: 350% action force;
-        margin: 0;
-        transition: left 0.5s
-      }
-      .newsSVG {
-        position: absolute;
-        top: 380px;
-        margin-left: 190px;
-        width: 100px;
-        height: 100px;
-      } */
+      transform-origin: top left;
     }
 
     .main { grid-area: 15 / 2 / 49 / 7; }

@@ -9,7 +9,7 @@ export function Header() {
       <h1 className='websiteLogo pading0 color2'>web site</h1>
     </header>
     <nav className="nav navColor" />
-    <div className="navItems ">
+    <div className="navItems">
       <div className="item1 navItemsFont">about </div>
       <div className="item2 navItemsFont color2">home </div>
       <div className="item3 navItemsFont">news </div>
