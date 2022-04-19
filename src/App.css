@@ -1,20 +1,3 @@
-  @font-face {
-    font-family: Ailerons;
-    src: url('./fonts/Ailerons-Regular.otf');
-  }
-  @font-face {
-    font-family: action force;
-    src: url('./fonts/Action_Force.ttf');
-  }
-  @font-face {
-    font-family: gotham medium;
-    src: url('./fonts/Gotham-Medium.otf');
-  }
-  @font-face {
-    font-family: fenwick;
-    src: url('./fonts/fenwick_ol_free.ttf');
-  }
-  
   .parent {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -24,74 +7,17 @@
     width: 100%;
     height: 100%;
   }
-    .darkColor { background-color: #000814;}
-    .color2 { color: #FFD60A }
-    .navColor { background-color: #003566 }
-    .bodyColor { background-color: #001D3D; z-index: -3; }
-
-    .hero { grid-area: 1 / 1 / 12 / 17; }
-    .pading0 {
-      padding: 0;
-      margin: 0;
-      height: 20px;
-    }
-
-    .mainTextAbout {
-      font: 5vw fenwick;
-      line-height: 50px;
-      letter-spacing: 10px;
-      margin-right: 10px;
-      margin: 0;
-      padding: 0;
-    }
-    .mainTextEvery {
-      font: 5vw fenwick;
-      line-height: 50px;
-      letter-spacing: 16px;
-      margin: 0;
-      padding: 0;
-      margin-top: 1vw;
-    }
-
-    .braking {
-      color: white;
-      font: 70px action force;
-      margin: 0;
-    }
-
-    .newsSVG {
-      position: absolute;
-      top: 410px;
-      margin-left: 235px;
-      width: 8vw;
-    }
-    @media (max-width: 1514px) {
-      .braking {
-        font: 350% action force;
-        margin: 0;
-        transition: left 0.5s
-      }
-      .newsSVG {
-        position: absolute;
-        top: 380px;
-        margin-left: 190px;
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    .main { grid-area: 16 / 2 / 49 / 7; }
-    .mainTitle { grid-area: 17 / 2 / 22 / 6; margin: 40px; }
-    .mainText { grid-area: 27 / 4 / 39 / 7; font: 36px gotham medium;}
-    .mainSupportText { grid-area: 42 / 5 / 44 / 7 }
-    .mainFooter { grid-area: 47 / 5 / 48 / 7; }
-    
+  .pading0 {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+  }
     .article { grid-area: 16 / 8 / 49 / 16; }
     .section1 { grid-area: 16 / 8 / 42 / 12; }
     .section1Nav { grid-area: 16 / 8 / 19 / 12; }
     .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
     .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
 
-    .section2 { grid-area: 43 / 8 / 49 / 16; }
-    .sectionFooter { grid-area: 16 / 12 / 42 / 16; }
+    .section2 { grid-area: 43 / 8 / 49 / 16; display: flex; justify-content: space-between; }
+    .sectionFooter { grid-area: 16 / 12 / 42 / 16; display: flex; flex-direction: column; align-items: center; justify-content: center;}
     .footer { grid-area: 50 / 8 / 51 / 16; }
