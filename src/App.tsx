@@ -10,7 +10,7 @@ function App() {
       <Card />
       <Sections />
       
-      <div className="article"> asdasdasdasdasdasda </div>
+      <div className="article">  </div>
       <div className="section1Nav ">a </div>
       <div className="section1Item1 ">a </div>
       <div className="section1Item2 "></div>
