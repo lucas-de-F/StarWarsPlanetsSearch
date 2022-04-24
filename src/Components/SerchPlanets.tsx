@@ -7,6 +7,7 @@ import FiltersInputs from '../Components/Filters';
 import { Planets } from './cardplanet';
 import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
+import { otherFilters } from '../Redux/types';
 
 export const SearchPlanets = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const SearchPlanets = () => {
     const { otherFilters, name } = useSelector((state: RootState) => state.planetFilter)
 
     const func = async (filteredByName: planet[]) => {
-        const result = otherFilters.forEach(({ as, filter_option, value }) => {
+        const { as, filter_option, value } = otherFilters as otherFilters
             if (as === 'less') {
                 const filter = filteredByName.filter((planet) => Number(planet[filter_option]) < value ? planet : null)
                 return dispatch(setFilteredPlanets([...filter]))
@@ -27,13 +28,11 @@ export const SearchPlanets = () => {
                 const filter = filteredByName.filter((planet) => Number(planet[filter_option]) === value ? planet : null)
                 return dispatch(setFilteredPlanets([...filter]))
             }
-        })
-        return result
     }
     useEffect(() => {
         dispatch(fetchPlanets())
     }, [])
-
+    
     useEffect(() => {
         const filteredByName: planet[] = entities.filter((planet: planet) => planet.name.includes(name))
         dispatch(setFilteredPlanets(filteredByName))
@@ -43,14 +42,17 @@ export const SearchPlanets = () => {
 
     return (
         <>
-            <div>
+        {
+            entities.length > 0 ? (<div>
                 nome: <input type="text" onChange={(e) => {
                     dispatch(setName(e.target.value))
                 }}></input>
                 <FiltersInputs />
                 <FiltersInputsList />
                 <Planets />
-            </div>
+                {/* <ChangePlanetPlanets /> */}
+            </div>) : null
+            }
         </>
     )
 }

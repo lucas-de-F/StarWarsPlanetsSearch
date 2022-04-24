@@ -1,25 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFilters } from '../Redux/FilterSlice';
 import { RootState } from '../Redux/store';
+import { otherFilters } from '../Redux/types';
 
 function FiltersInputsList() {
   const { otherFilters } = useSelector((state: RootState) => state.planetFilter)
   const dispatch = useDispatch()
 
-  return (
+  const renderFilter = ({ filter_option, as, value }: otherFilters) => (
     <div>
-    { otherFilters ? otherFilters.map((filter) => (
-    <div>
-      <p>
-        Filtered By: {filter.filter_option} {filter.as} {filter.value}
+      <p style={{ color: 'white' }}>
+        Filtered By: {filter_option} {as} {value}
         <button onClick={() => {
-          dispatch(removeFilters(filter.id as number))
+          dispatch(removeFilters())
         }}>X</button>
       </p>
     </div>
-  )): null }
-    </div>
   )
+
+  if (Object.keys(otherFilters).length > 0) {
+    return renderFilter(otherFilters as otherFilters)
+  }
+
+  return (<div></div>)
 }
 
 export default FiltersInputsList;

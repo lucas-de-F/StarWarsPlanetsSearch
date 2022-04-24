@@ -7,11 +7,12 @@ export interface otherFilters {
 
 export interface planetInterface {
   name: string;
-  otherFilters: otherFilters[] | []
+  otherFilters: otherFilters | {}
 }
 
 export interface UsersState {
   entities: []
   filtered: []
   loading: 'idle' | 'pending' | 'succeeded' | 'failed'
+  index: number,
 } 

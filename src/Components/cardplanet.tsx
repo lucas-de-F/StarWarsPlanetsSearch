@@ -1,18 +1,23 @@
 import { useSelector } from "react-redux"
-import { planet } from "./types"
 import { RootState } from "../Redux/store"
 
 export const Planets = () => {
-    const planetsFiltered = useSelector((state: RootState) => state.PlanetsSlice.filtered)
+    const { filtered, index } = useSelector((state: RootState) => state.PlanetsSlice)
+    if (filtered.length > 0 && index <= filtered.length) {
+        const { name, population, diameter } = filtered[index]
 
-    return (
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}>
-            {planetsFiltered.map((planet: planet) => (
+        return (
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                <p style={{ color: 'white' }}>
+                    {index} of {filtered.length}
+                </p>
                 <div style={{ display: 'flex', flexDirection: 'column', margin: 20, backgroundColor: 'grey' }}>
-                    <h3>{planet.name}</h3>
-                    <p>{planet.population}</p>
-                    <p>{planet.diameter}</p>
-                </div>))}
-        </div>
-    )
+                    <h3>{name}</h3>
+                    <p>{population}</p>
+                    <p>{diameter}</p>
+                </div>
+            </div>
+        )
+    }
+    return <>CAN NOT BE FOUND</>
 }

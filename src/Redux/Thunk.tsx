@@ -15,6 +15,7 @@ const initialState = {
   filtered: [],
   entities: [],
   loading: 'idle',
+  index: 0,
 } as UsersState
 
 export const fetchPlanetsSlice = createSlice({

@@ -13,14 +13,14 @@
     height: 20px;
   }
     .article { grid-area: 16 / 8 / 49 / 16; }
-    .section1 { grid-area: 16 / 8 / 42 / 12; }
+    .section1 { grid-area: 15 / 8 / 42 / 12; }
     .section1Nav { grid-area: 16 / 8 / 19 / 12; }
     .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
     .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
 
     .section2 { grid-area: 43 / 8 / 49 / 16; display: flex; justify-content: space-between; }
     .sectionFooter {
-      grid-area: 16 / 12 / 42 / 16;
+      grid-area: 15 / 12 / 42 / 16;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,15 +35,11 @@
 
       .sectionFooter {
         grid-area: 16 / 10 / 42 / 16;
-        /* display: none; */
-        /* flex-direction: column;
-        align-items: center;
-        justify-content: center; */
+
       }
     .section2 {
       grid-area: 43 / 10 / 49 / 16;
-      /* display: none; */
-      /* justify-content: space-between; */
+
     }
 
     }

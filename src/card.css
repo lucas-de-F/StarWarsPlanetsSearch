@@ -79,7 +79,7 @@
       transform-origin: top left;
     }
 
-    .main { grid-area: 15 / 2 / 49 / 7; }
+    .main { grid-area: 15 / 2 / 49 / 8; }
     .mainTitle { grid-area: 16 / 2 / 22 / 6; margin: 0px; }
     .mainText {
       grid-area: 25 / 4 / 39 / 7;

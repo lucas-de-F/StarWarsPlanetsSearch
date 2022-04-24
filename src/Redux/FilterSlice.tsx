@@ -3,7 +3,7 @@ import { planetInterface, otherFilters } from "./types";
 
 const initialState: planetInterface = {
   name: "",
-  otherFilters: []
+  otherFilters: {}
 };
 
 const FilterNameSlice = createSlice({
@@ -14,12 +14,10 @@ const FilterNameSlice = createSlice({
       state.name = action.payload;
     },
     setFilters: (state: any, action: PayloadAction<otherFilters>) => {
-      const id = state.otherFilters.length
-      state.otherFilters.push({ id, ...action.payload})
+      state.otherFilters = {...action.payload}
     },
-    removeFilters: (state, action: PayloadAction<number>) => {
-      const id = action.payload
-      state.otherFilters = state.otherFilters.filter((filter) => filter.id !== id)
+    removeFilters: (state) => {
+      state.otherFilters = state.otherFilters = {}
     },
   },
 });
