@@ -14,7 +14,12 @@ import { LupaSvg } from '../imgs/footer';
 export const SearchPlanets = () => {
     const [ activeFilters, setActiveFilters ] = useState(false)
     const [ activeSearchBar, setActiveSearchBar ] = useState(false)
-    const toggleSearchBar = () => setActiveSearchBar(!activeSearchBar)
+    const [ buttonClass, setButotnClass ] = useState('rotate-center')
+    const toggleSearchBar = () => {
+        setButotnClass('')
+        setActiveSearchBar(!activeSearchBar)
+        setButotnClass('rotate-center')
+    }
 
     const dispatch = useDispatch();
     const { entities } = useSelector((state: RootState) => state.PlanetsSlice)
@@ -48,16 +53,18 @@ export const SearchPlanets = () => {
 
     return (
         <>
-            <div className="section1Nav ">
-            <button onClick={toggleSearchBar} style={{ backgroundColor: '#000814', border: 0 }}>
-            <LupaSvg/>
-            </button>
+            <div className="section1Nav">
             {
                 activeSearchBar ? (<div>
-                    <input type="text" className='scale-up-hor-right' onChange={(e) => {
+                    <input type="text" value={name} className='scale-up-hor-right' onChange={(e) => {
                         dispatch(setName(e.target.value))
                     }}></input>
-                </div>) : null}
+                </div>)
+                : null
+            }
+            <button onClick={toggleSearchBar} style={{ backgroundColor: '#003566', border: 0}}>
+            <LupaSvg classname={buttonClass} />
+            </button>
             </div>
             <div className="section1Item1 ">
                 <button type='button' onClick={() => setActiveFilters(!activeFilters)}>FIltros</button>
