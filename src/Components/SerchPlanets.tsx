@@ -10,6 +10,7 @@ import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
 import { otherFilters } from '../Redux/types';
 import { LupaSvg } from '../imgs/footer';
+import { TextField } from '@mui/material';
 
 export const SearchPlanets = () => {
     const [ activeFilters, setActiveFilters ] = useState(false)
@@ -53,12 +54,13 @@ export const SearchPlanets = () => {
 
     return (
         <>
+         {/* <TextField id="outlined-search" label="Search field" type="search" /> */}
             <div className="section1Nav">
             {
                 activeSearchBar ? (<div>
-                    <input type="text" value={name} className='scale-up-hor-right' onChange={(e) => {
+                    <TextField type="search" autoFocus={true} color='secondary' value={name} className='scale-up-hor-right' onChange={(e) => {
                         dispatch(setName(e.target.value))
-                    }}></input>
+                    }}></TextField>
                 </div>)
                 : null
             }
