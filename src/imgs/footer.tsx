@@ -63,3 +63,10 @@ export const ComingSoon = () => (
 
 
 )
+
+export const LupaSvg = () => (
+    <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18.8125" cy="18.8125" r="10.75" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26.875 26.875L34.9375 34.9375" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+)

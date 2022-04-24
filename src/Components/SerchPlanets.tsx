@@ -9,9 +9,13 @@ import { Planets } from './cardplanet';
 import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
 import { otherFilters } from '../Redux/types';
+import { LupaSvg } from '../imgs/footer';
 
 export const SearchPlanets = () => {
     const [ activeFilters, setActiveFilters ] = useState(false)
+    const [ activeSearchBar, setActiveSearchBar ] = useState(false)
+    const toggleSearchBar = () => setActiveSearchBar(!activeSearchBar)
+
     const dispatch = useDispatch();
     const { entities } = useSelector((state: RootState) => state.PlanetsSlice)
     const { otherFilters, name } = useSelector((state: RootState) => state.planetFilter)
@@ -44,9 +48,13 @@ export const SearchPlanets = () => {
 
     return (
         <>
-            <div className="section1Nav ">{
-                entities.length > 0 ? (<div>
-                    nome: <input type="text" className='scale-up-hor-right' onChange={(e) => {
+            <div className="section1Nav ">
+            <button onClick={toggleSearchBar} style={{ backgroundColor: '#000814', border: 0 }}>
+            <LupaSvg/>
+            </button>
+            {
+                activeSearchBar ? (<div>
+                    <input type="text" className='scale-up-hor-right' onChange={(e) => {
                         dispatch(setName(e.target.value))
                     }}></input>
                 </div>) : null}
