@@ -10,7 +10,7 @@ function FiltersInputsList() {
   const renderFilter = ({ filter_option, as, value }: otherFilters) => (
     <div>
       <p style={{ color: 'white' }}>
-        Filtered By: {filter_option} {as} {value}
+        Filtered By: {filter_option} {as} {as !== 'equal' && 'than'} {value}
         <button onClick={() => {
           dispatch(removeFilters())
         }}>X</button>
