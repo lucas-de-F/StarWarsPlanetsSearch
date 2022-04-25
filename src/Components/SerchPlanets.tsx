@@ -9,18 +9,15 @@ import { Planets } from './cardplanet';
 import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
 import { otherFilters } from '../Redux/types';
-import { LupaSvg } from '../imgs/footer';
-import { TextField } from '@mui/material';
+import { LupaSvg, Settings, SettingsStatus } from '../imgs/footer';
+import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 
 export const SearchPlanets = () => {
-    const [ activeFilters, setActiveFilters ] = useState(false)
-    const [ activeSearchBar, setActiveSearchBar ] = useState(false)
-    const [ buttonClass, setButotnClass ] = useState('rotate-center')
-    const toggleSearchBar = () => {
-        setButotnClass('')
-        setActiveSearchBar(!activeSearchBar)
-        setButotnClass('rotate-center')
-    }
+    const [activeFilters, setActiveFilters] = useState(false)
+    const [activeSearchBar, setActiveSearchBar] = useState(false)
+    // const [buttonClass, setButotnClass] = useState('rotate-center')
+    const toggleSearchBar = () => setActiveSearchBar(!activeSearchBar)
+    const toggleFilters = () => setActiveFilters(!activeFilters)
 
     const dispatch = useDispatch();
     const { entities } = useSelector((state: RootState) => state.PlanetsSlice)
@@ -51,31 +48,68 @@ export const SearchPlanets = () => {
         func(filteredByName)
     }, [name, otherFilters, dispatch])
 
-
+    const style = {
+        position: 'absolute' as 'absolute',
+        top: '50%',
+        left: '38%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
     return (
         <>
-         {/* <TextField id="outlined-search" label="Search field" type="search" /> */}
+            {/* <TextField id="outlined-search" label="Search field" type="search" /> */}
             <div className="section1Nav">
-            {
-                activeSearchBar ? (<div>
-                    <TextField type="search" autoFocus={true} color='secondary' value={name} className='scale-up-hor-right' onChange={(e) => {
-                        dispatch(setName(e.target.value))
-                    }}></TextField>
-                </div>)
-                : null
-            }
-            <button onClick={toggleSearchBar} style={{ backgroundColor: '#003566', border: 0}}>
-            <LupaSvg classname={buttonClass} />
-            </button>
+                <button type='button' style={{ all: 'unset', cursor: 'pointer', margin: 10 }} onClick={() => setActiveFilters(!activeFilters)}> {
+                    Object.keys(otherFilters).length > 0 ? <SettingsStatus /> : <Settings />}</button>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    {
+                        activeSearchBar ? (<div>
+                            <TextField type="search" autoFocus={true} color='secondary' value={name} className='scale-up-hor-right' onChange={(e) => {
+                                dispatch(setName(e.target.value))
+                            }}></TextField>
+                        </div>)
+                            : null
+                    }
+                    <button onClick={() => {
+                        toggleSearchBar()
+                    }} style={{
+                        textDecoration: 'none',
+                        cursor: 'pointer',
+                        padding: 10,
+                        background: 'none',
+                        border: 0
+                    }} className={activeSearchBar ? 'rotate-center' : ''}>
+                        <LupaSvg />
+                    </button>
+                </div>
             </div>
             <div className="section1Item1 ">
-                <button type='button' onClick={() => setActiveFilters(!activeFilters)}>FIltros</button>
                 {activeFilters && (
                     <>
-                        <FiltersInputs />
-                        <FiltersInputsList />
+                        <Modal
+                            
+                            open={activeFilters}
+                            aria-labelledby="keep-mounted-modal-title"
+                            aria-describedby="keep-mounted-modal-description"
+                        >
+                            <Box sx={style} className='slide-top'>
+                                <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+                                    Text in a modal
+                                </Typography>
+                                <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+                                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                </Typography>
+                                <FiltersInputs />
+                            <Button onClick={toggleFilters}>CLOSE</Button>
+                            </Box>
+                        </Modal>
                     </>
                 )}
+                {Object.keys(otherFilters).length > 0 && <FiltersInputsList />}
             </div>
             <div className="section1Item2 "><Planets /></div>
             <div className="footer darkColor">aasdasdas </div>
