@@ -52,7 +52,7 @@ export const SearchPlanets = () => {
 
     const style = {
         position: 'absolute' as 'absolute',
-        top: '50%',
+        top: '38%',
         left: '38%',
         transform: 'translate(-50%, -50%)',
         width: 400,
@@ -65,8 +65,9 @@ export const SearchPlanets = () => {
         <>
             {/* <TextField id="outlined-search" label="Search field" type="search" /> */}
             <div className="section1Nav">
-                <button type='button' style={{ all: 'unset', cursor: 'pointer', margin: 10 }} onClick={() => setActiveFilters(!activeFilters)}> {
-                    Object.keys(otherFilters).length > 0 ? <SettingsStatus /> : <Settings />}</button>
+                <button type='button' style={{ all: 'unset', cursor: 'pointer', margin: 10 }}  className={!activeFilters ? 'rotate-center' : ''} onClick={() => setActiveFilters(!activeFilters)}> {
+                    Object.keys(otherFilters).length > 0 ? <SettingsStatus /> : <Settings />}
+                </button>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     {
                         activeSearchBar ? (<div>
@@ -93,7 +94,7 @@ export const SearchPlanets = () => {
                 {activeFilters && (
                     <>
                         <Modal
-
+                            onBackdropClick={toggleFilters}
                             open={activeFilters}
                             aria-labelledby="keep-mounted-modal-title"
                             aria-describedby="keep-mounted-modal-description"
@@ -110,7 +111,7 @@ export const SearchPlanets = () => {
                 )}
                 {Object.keys(otherFilters).length > 0 && <FiltersInputsList />}
             </div>
-            <div className="section1Item2"><Planets /></div>
+            <div className=""><Planets /></div>
             <div className="footer darkColor" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <button onClick={() => dispatch(decrementIndex())} style={{
                     textDecoration: 'none',

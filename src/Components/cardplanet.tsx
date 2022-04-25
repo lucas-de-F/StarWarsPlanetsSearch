@@ -8,7 +8,7 @@ export const Planets = () => {
         const { name, population, diameter } = filtered[index]
 
         return (
-            <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', margin: 60 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', marginTop: 60, marginBottom: 40 }}>
                 <div style={{
                     backgroundColor: '#003566',
                     width: 250,
