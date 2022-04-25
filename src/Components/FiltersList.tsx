@@ -1,4 +1,4 @@
-import { Chip } from '@mui/material';
+import { Button, Chip } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFilters } from '../Redux/FilterSlice';
 import { RootState } from '../Redux/store';
@@ -12,9 +12,9 @@ function FiltersInputsList() {
     <div style={{ margin: 10 }}>
         < Chip variant="outlined" label={`${filter_option} ${as} ${as !== 'equal' && 'than'} ${value}`} style={{ color: '#FFD60A'}} />
 
-        <button onClick={() => {
+        <Button style={{ color: '#FFD60A'}} onClick={() => {
           dispatch(removeFilters())
-        }}>X</button>
+        }}>X</Button>
     </div>
   )
 
