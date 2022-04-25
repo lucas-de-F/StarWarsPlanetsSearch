@@ -11,7 +11,7 @@ export const Planets = () => {
             <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', margin: 60 }}>
                 <div style={{
                     backgroundColor: '#003566',
-                    width: 200,
+                    width: 250,
                     height: 300,
                     display: 'flex',
                     flexDirection: 'column',
@@ -24,7 +24,7 @@ export const Planets = () => {
                 </svg>
 
                 <p style={{ color: 'white' }}>
-                    {index} of {filtered.length}
+                    {index + 1} of {filtered.length}
                 </p>
                     <Typography style={{ alignSelf: 'center', fontFamily: 'gotham book', color:'#FFD60A'}}>name: {name}</Typography>
                     <Typography style={{ alignSelf: 'center', fontFamily: 'gotham book', color:'#FFD60A'}}>population: {population}</Typography>
@@ -33,5 +33,13 @@ export const Planets = () => {
             </div>
         )
     }
-    return <>CAN NOT BE FOUND</>
+    return <Typography style={{
+        alignSelf: 'center',
+        fontFamily: 'gotham book',
+        color:'#FFD60A',
+        fontSize: 20,
+        textAlign: 'center',
+        marginTop: 150,
+        marginBottom: 200
+    }}>CAN NOT BE FOUND</Typography>
 }

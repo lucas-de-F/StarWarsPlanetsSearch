@@ -2,19 +2,20 @@ import '../App.css'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
-import { fetchPlanets, setFilteredPlanets } from '../Redux/Thunk';
+import { fetchPlanets, setFilteredPlanets, incrementIndex, decrementIndex, resetIndex } from '../Redux/Thunk';
 import { planet } from './types';
 import FiltersInputs from '../Components/Filters';
 import { Planets } from './cardplanet';
 import FiltersInputsList from '../Components/FiltersList';
 import { setName } from '../Redux/FilterSlice';
 import { otherFilters } from '../Redux/types';
-import { LupaSvg, Settings, SettingsStatus } from '../imgs/footer';
+import { LupaSvg, Settings, SettingsStatus, ArrowLeft, ArrowRight, Logo } from '../imgs/footer';
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 
 export const SearchPlanets = () => {
     const [activeFilters, setActiveFilters] = useState(false)
     const [activeSearchBar, setActiveSearchBar] = useState(false)
+
     // const [buttonClass, setButotnClass] = useState('rotate-center')
     const toggleSearchBar = () => setActiveSearchBar(!activeSearchBar)
     const toggleFilters = () => setActiveFilters(!activeFilters)
@@ -45,6 +46,7 @@ export const SearchPlanets = () => {
     useEffect(() => {
         const filteredByName: planet[] = entities.filter((planet: planet) => planet.name.includes(name))
         dispatch(setFilteredPlanets(filteredByName))
+        dispatch(resetIndex())
         func(filteredByName)
     }, [name, otherFilters, dispatch])
 
@@ -91,17 +93,17 @@ export const SearchPlanets = () => {
                 {activeFilters && (
                     <>
                         <Modal
-                            
+
                             open={activeFilters}
                             aria-labelledby="keep-mounted-modal-title"
                             aria-describedby="keep-mounted-modal-description"
                         >
                             <Box sx={style} className='slide-top' style={{ display: 'flex', flexDirection: 'column' }}>
-                            <Button onClick={toggleFilters} style={{ alignSelf: 'end', width: 10 }} color='secondary'>X</Button>
+                                <Button onClick={toggleFilters} style={{ alignSelf: 'end', width: 10 }} color='secondary'>X</Button>
                                 <Typography id="keep-mounted-modal-title" style={{ textAlign: 'center' }} variant="h6" component="h2">
                                     Adicionar filtros
                                 </Typography>
-                                <FiltersInputs toggle={toggleFilters}/>
+                                <FiltersInputs toggle={toggleFilters} />
                             </Box>
                         </Modal>
                     </>
@@ -109,7 +111,27 @@ export const SearchPlanets = () => {
                 {Object.keys(otherFilters).length > 0 && <FiltersInputsList />}
             </div>
             <div className="section1Item2"><Planets /></div>
-            <div className="footer darkColor">aasdasdas </div>
+            <div className="footer darkColor" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <button onClick={() => dispatch(decrementIndex())} style={{
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    padding: 10,
+                    background: 'none',
+                    border: 0
+                }} >
+                    <ArrowLeft></ArrowLeft>
+                </button>
+                <Logo></Logo>
+                <button onClick={() => dispatch(incrementIndex())} style={{
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    padding: 10,
+                    background: 'none',
+                    border: 0
+                }} >
+                    <ArrowRight></ArrowRight>
+                </button>
+            </div>
         </>
     )
 }
