@@ -108,7 +108,7 @@ export const SearchPlanets = () => {
                 )}
                 {Object.keys(otherFilters).length > 0 && <FiltersInputsList />}
             </div>
-            <div className="section1Item2 "><Planets /></div>
+            <div className="section1Item2"><Planets /></div>
             <div className="footer darkColor">aasdasdas </div>
         </>
     )
