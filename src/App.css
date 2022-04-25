@@ -24,7 +24,10 @@
     }
     .section1Item1 { grid-area: 16 / 8 / 19 / 9; }
     .section1Item2 { grid-area: 16 / 11 / 19 / 12; }
-
+    @font-face {
+      font-family: gotham book;
+      src: url('./fonts/Gotham-Book.otf');
+    }
 
     .scale-up-hor-right {
       -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
