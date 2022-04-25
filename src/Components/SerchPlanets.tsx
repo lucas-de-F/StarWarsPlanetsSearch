@@ -96,15 +96,12 @@ export const SearchPlanets = () => {
                             aria-labelledby="keep-mounted-modal-title"
                             aria-describedby="keep-mounted-modal-description"
                         >
-                            <Box sx={style} className='slide-top'>
-                                <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-                                    Text in a modal
+                            <Box sx={style} className='slide-top' style={{ display: 'flex', flexDirection: 'column' }}>
+                            <Button onClick={toggleFilters} style={{ alignSelf: 'end', width: 10 }} color='secondary'>X</Button>
+                                <Typography id="keep-mounted-modal-title" style={{ textAlign: 'center' }} variant="h6" component="h2">
+                                    Adicionar filtros
                                 </Typography>
-                                <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-                                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                                </Typography>
-                                <FiltersInputs />
-                            <Button onClick={toggleFilters}>CLOSE</Button>
+                                <FiltersInputs toggle={toggleFilters}/>
                             </Box>
                         </Modal>
                     </>

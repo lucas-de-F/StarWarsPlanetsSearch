@@ -1,9 +1,10 @@
+import { MenuItem, Select } from '@mui/material';
 import React from 'react';
 
-export const Select = ({ params, changeState }: any) => (
-    <select onChange={changeState}>
+export const SelectInp = ({ params, changeState, value }: any) => (
+    <Select style={{ margin: 10 }} onChange={changeState} value={value}>
         {params.map((param: string) => (
-            <option>{param}</option>
+            <MenuItem value={param}>{param}</MenuItem>
         ))}
-    </select>
+    </Select>
 )
